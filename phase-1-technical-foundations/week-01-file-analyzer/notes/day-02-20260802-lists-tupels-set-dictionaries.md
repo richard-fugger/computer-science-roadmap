@@ -12,7 +12,7 @@ How can the virtual environment for the Python project be activated?
 .\.venv\Scripts\Activate.ps1
 ```
 
-How can yesterdays' program be started?
+How can yesterday's program be started?
 
 ```powershell
 python exercises\day_01_directory_analyzer.py
@@ -37,14 +37,14 @@ git status
 
 | Data Structure    | Syntax             | Ordered   | Mutable       | Duplicates    | Typical Use                                |
 --------------------|--------------------|-----------|---------------|---------------|--------------------------------------------|
-List                | [1, 2, 3]          | Yes       | Yes           | Yes           | An orderes collection of values            |
+List                | [1, 2, 3]          | Yes       | Yes           | Yes           | An ordered collection of values            |
 Tuple               | (1, 2, 3)          | Yes       | No            | Yes           | A fixed collection of related values       |
 Set                 | {1, 2, 3}          | No        | Yes           | No            | Unique values and fast membership check    |
 Dictionary          | {"name": "Max"}    | Yes       | Yes           | Keys: No      | Key-value mappings                         |
 
 ### Lists
 
-A list is an orderes and mutable collection.
+A list is an ordered and mutable collection.
 
 ```python
 fruits = ["apple", "banana", "orange"]
@@ -88,7 +88,7 @@ numbers = [10, 20, 30]
 numbers.append(40)          # Add an element at the end
 numbers.insert(1,15)        # Insert an element at a specific position
 numbers.remove(20)          # Remove a specific value
-last_number = numberspop()  # Remove and return the last element
+last_number = numbers.pop()  # Remove and return the last element
 numbers.sort()              # Sort the list
 numbers.reverse()           # Reverse the order
 ```
@@ -121,7 +121,7 @@ Use a tuple when:
 * multiple values belong together,
 * the values should not be changed,
 * each position has a fixed meaning,
-* a function should return mutiple values.
+* a function should return multiple values.
 
 #### Tuple Unpacking
 
@@ -133,7 +133,7 @@ screen_size = (1920, 1080)
 width, height = screen_size
 
 print(width)  # 1920
-print(heiht)  # 1080
+print(height)  # 1080
 ```
 
 A function can therefore return multiple values:
@@ -188,7 +188,7 @@ numbers = {1, 2, 3}
 Duplicate values are removed automatically:
 
 ```python
-number {1, 2, 2, 3, 3, 3}
+numbers {1, 2, 2, 3, 3, 3}
 
 print(numbers)
 
@@ -196,7 +196,7 @@ print(numbers)
 # {1, 2, 3}
 ```
 
-You should not rely on the order of elements in a set. You also cannot access set elemets by index:
+You should not rely on the order of elements in a set. You also cannot access set elements by index:
 
 ```python
 numbers[0]
@@ -215,7 +215,7 @@ Use a set when:
 ##### Remove Duplicates
 
 ```python
-names = {"Anna", "Max", "Anna", "Lisa", "Max"}
+names = ["Anna", "Max", "Anna", "Lisa", "Max"]
 
 unique_names = set(names)
 
@@ -228,7 +228,7 @@ print(unique_names)
 unique_names_list = list(set(names))
 ```
 
-However, you should not rely on the original oder being preserved.
+However, you should not rely on the original order being preserved.
 
 ##### Fast Membership Checks
 
@@ -237,7 +237,7 @@ allowed_extensions = {".py", ".md", ".json"}
 
 extension = ".py"
 
-if extension in allowed-extensions:
+if extension in allowed_extensions:
     print("File type is allowed.")
 ```
 
@@ -284,7 +284,7 @@ all_skills = python_skills | required_skills
 ```python
 skills = {"lists", "tuples"}
 
-skills.add("stes")
+skills.add("sets")
 skills.remove("lists")
 skills.discard("dictionaries")
 ```
@@ -300,12 +300,12 @@ skills.remove("unknown")
 This does not cause an error:
 
 ```python
-skills.discard("unknown)
+skills.discard("unknown")
 ```
 
 #### Empty Set
 
-Thsi is not an empty set:
+This is not an empty set:
 
 ```python
 empty = {}
@@ -380,7 +380,7 @@ print(email) # None
 You can also provide a default value:
 
 ```python
-email = userget("email", "No email availiable")
+email = user.get("email", "No email available")
 ```
 
 #### Iteration over a Dictionary

@@ -36,20 +36,20 @@ for item in path.iterdir():
         file_list.append(file)
 
 
-def sort_list_by_file_names(files, sort_key, sort_reverse = False):
+def sort_files(files, sort_key, sort_reverse = False):
     return sorted(files, key=lambda file: file[sort_key], reverse = sort_reverse)
         
 
 print("\nTask 3: Sort files")
 
-files_list_sorted_by_names = sort_list_by_file_names(file_list, "name")
+files_list_sorted_by_names = sort_files(file_list, "name")
 print("\nSort by name:")
 print(files_list_sorted_by_names)
 
-files_list_sorted_by_size_asc = sort_list_by_file_names(file_list, "size")
+files_list_sorted_by_size_asc = sort_files(file_list, "size")
 print("\nSort by size ASC:")
 print(files_list_sorted_by_size_asc)
 
-files_list_sorted_by_size_desc = sort_list_by_file_names(file_list, "size", True)
+files_list_sorted_by_size_desc = sort_files(file_list, "size", True)
 print("\nSort by size DESC:")
 print(files_list_sorted_by_size_desc)
