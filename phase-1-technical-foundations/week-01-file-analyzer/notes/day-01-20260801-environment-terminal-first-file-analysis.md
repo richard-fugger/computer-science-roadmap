@@ -1,6 +1,6 @@
 # Environment, Terminal, and First File Analysis
 
-**Start:** 22:00
+**Start:** 01.08.2026 | 22:00
 
 ---
 
@@ -185,4 +185,4 @@ The `-u` option connects the local branch to the corresponding remote branch. Af
 git push
 ```
 
-**End** 00:30
+**End:** 02.08.2026 | 00:30

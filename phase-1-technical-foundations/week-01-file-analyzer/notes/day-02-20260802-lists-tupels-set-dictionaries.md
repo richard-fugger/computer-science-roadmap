@@ -1,6 +1,6 @@
 # Lists, Tuples, Sets, and Dictionaries
 
-**Start:** 22:45
+**Start:** 02.08.2026 | 22:45
 
 ---
 
@@ -420,3 +420,5 @@ The tuple is unpacked directly.
 ## Block 3: Short Tasks
 * `phase-1-technical-foundations\week-01-file-analyzer\exercises\day_02_data_structure_methods.py`
 * `phase-1-technical-foundations\week-01-file-analyzer\src\main.py`
+
+**End:** 03.08.2026 | 02:30
