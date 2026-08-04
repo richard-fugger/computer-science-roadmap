@@ -1,4 +1,4 @@
-# Functions, Parameter, and Clean Structure
+# Functions, Parameters, and Clean Structure
 **Start:** 04.08.2026 | 00:25
 
 ---
@@ -17,7 +17,7 @@ def count_extensions(file_names):
         if ext in extensions:
             extensions[ext] += 1
         else:
-            extension[ext] = 1
+            extensions[ext] = 1
     
     return extensions
 ```
@@ -37,7 +37,7 @@ def greet():
     print("Hello!")
 ```
 
-The funtion is exercuted only when it is called:
+The funtion is executed only when it is called:
 
 ```python
 greet()
@@ -57,7 +57,7 @@ Functions help you:
 * reuse code,
 * avoid duplication,
 * give names to specific operations,
-* test parts of a program seperately.
+* test parts of a program separately.
 
 Example:
 
@@ -118,7 +118,7 @@ name = "main.py"
 size = 430
 ```
 
-### Retrun Values
+### Return Values
 
 A function can return a result using the `return` keyword.
 
@@ -146,7 +146,7 @@ Functions can return lists, dictionaries, sets, tuples, or other objects.
 
 ```python
 def get_supported_extensions():
-    return {".py", ".md". ".json"}
+    return {".py", ".md", ".json"}
 
 extensions = get_supported_extensions()
 ```
@@ -218,7 +218,7 @@ def format_size(decimal_places=2, size_in_bytes):
 Use them when:
 * one value is used most of the time,
 * the caller should be able to override that value,
-* the function should remain convinient to call.
+* the function should remain convenient to call.
 
 ### Keyword Arguments
 
@@ -364,14 +364,6 @@ Pass the required data as a parameter and return the result:
 
 ```python
 def add_file(files, file_info):
-    files.append(file_info)
-    return files
-```
-
-Better still, depending on the situation, create a new list:
-
-```python
-def add_file(files, file_info):
     return files + [file_info]
 ```
 
@@ -419,9 +411,9 @@ def count_files_by_extension(files):
         extension = file_info["extension"]
         if extension in extension_counts:
             extension_counts[extension] += 1
-            else: extension_counts[extension] = 1
+        else: extension_counts[extension] = 1
 
-return extension_counts
+    return extension_counts
 ```
 
 The function receives its required information through a parameter and returns its result.
@@ -438,7 +430,7 @@ DEFAULT_DECIMAL = 2
 
 def format_size(size_in_bytes):
     size_in_kb = size_in_bytes / BYTES_PER_KILOBYTE
-    return f"{size_in_kb:.2f} KB"
+    return f"{size_in_kb:.{DEFAULT_DECIMAL_PLACES}f} KB"
 ```
 
 Python does not technically prevent constants from being changed. Uppercase naming only communicates that the value should remain unchanged.
@@ -447,14 +439,14 @@ Python does not technically prevent constants from being changed. Uppercase nami
 
 A lambda is a small anonymous function.
 
-Normal funtion:
+Normal function:
 
 ```python
 def get_file_size(file_info):
     return file_info["size"]
 ```
 
-Equvalent lambda:
+Equivalent lambda:
 
 ```python
 lambda file_info: file_info["size"]
@@ -473,7 +465,7 @@ It automatically returns the expression after the colon.
 ```python
 sorted_files = sorted(
     files,
-    key_lambda file_info: file_info["size"],
+    key=lambda file_info: file_info["size"],
 )
 ```
 
@@ -496,7 +488,7 @@ However, a normal function is usually clearer.
 #### When should you use lambdas?
 
 Use lambda when:
-* the funciton is very short,
+* the function is very short,
 * it contains only one expression,
 * it is needed only once,
 * it is passed directly to another function
@@ -523,9 +515,8 @@ Notice that there are no parentheses after greet.
 ```python
 print(message_function("Max"))
 
-Output:
-
-Hello, Max!
+# Output:
+# Hello, Max!
 ```
 
 #### Function reference versus function call
@@ -557,9 +548,8 @@ result = apply_operation(5, double)
 
 print(result)
 
-Output:
-
-10
+# Output:
+# 10
 ```
 
 Here:
@@ -759,3 +749,6 @@ A well-designed function should usually:
 * have a clear and descriptive name.
 
 
+## Block 3: Short Tasks
+* `phase-1-technical-foundations\week-01-file-analyzer\exercises\day_03_functions.py`
+* `phase-1-technical-foundations\week-01-file-analyzer\src\main.py`

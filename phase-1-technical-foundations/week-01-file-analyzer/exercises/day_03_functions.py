@@ -13,9 +13,6 @@ def collect_files(directory_path) -> list[dict]:
 
     return files
 
-def format_size(size_in_bytes: int) -> str:
-    return f"{size_in_bytes} Bytes"
-
 def get_extension(file_name: str) -> str:
     ext = Path(file_name).suffix
 
@@ -62,19 +59,19 @@ def print_divider():
 
 def print_extensions(extensions: dict[str, int]):
     for ext, count in extensions.items():
-            print(f"{ext}: {count}")
+        print(f"{ext}: {count}")
 
 def format_file_size(size: int, decimal_places: int=2) -> str:
     if size < 1024:
-        return f"{round(size, decimal_places)} Bytes"
+        return f"{size} Bytes"
 
-    return f"{round(size / 1024, decimal_places)} KB"
+    return f"{size / 1024:.{decimal_places}f} KB"
 
 def print_files_with_size(files):
     for file in files:
         print(f"{file['name']} - {format_file_size(file['size'], 2)}")
 
-def print_report(files, extensions, total_size, largest_files) -> str:
+def print_report(files, extensions, total_size, largest_files):
     print("File Analyzer")
     print_divider()
     print(f"Files found: {len(files)}")
