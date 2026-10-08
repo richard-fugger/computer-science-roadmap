@@ -2,6 +2,8 @@
 
 **Start:** 02.08.2026 | 22:45
 
+**End:** 03.08.2026 | 02:30
+
 ---
 
 ## Block 1: Repetition of Yesterday
@@ -420,5 +422,3 @@ The tuple is unpacked directly.
 ## Block 3: Short Tasks
 * `phase-1-technical-foundations\week-01-file-analyzer\exercises\day_02_data_structure_functions.py`
 * `phase-1-technical-foundations\week-01-file-analyzer\src\main.py`
-
-**End:** 03.08.2026 | 02:30

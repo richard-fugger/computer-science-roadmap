@@ -2,6 +2,8 @@
 
 **Start:** 01.08.2026 | 22:00
 
+**End:** 02.08.2026 | 00:30
+
 ---
 
 ## Block 1: Project Setup
@@ -184,5 +186,3 @@ The `-u` option connects the local branch to the corresponding remote branch. Af
 ```powershell
 git push
 ```
-
-**End:** 02.08.2026 | 00:30

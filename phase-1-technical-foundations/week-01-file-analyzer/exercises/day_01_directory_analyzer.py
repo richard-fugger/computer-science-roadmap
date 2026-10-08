@@ -1,5 +1,6 @@
 from pathlib import Path
 
+
 def format_file_size(size_in_bytes):
     if size_in_bytes < 1024:
         return f"{size_in_bytes} Bytes"

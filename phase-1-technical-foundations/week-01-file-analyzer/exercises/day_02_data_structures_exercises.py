@@ -8,13 +8,14 @@ print(f"Unique set: {names_unique}")
 
 # Task 2: Group and count file extensions
 from pathlib import Path
+
 files = ["main.py", "test.py", "README.md", "data.json"]
 extensions = {}
 
 for file in files:
     extension = Path(file).suffix
     # print(extension)
-    if extension in extensions.keys():
+    if extension in extensions:
         extensions[extension] += 1
     else:
         extensions[extension] = 1

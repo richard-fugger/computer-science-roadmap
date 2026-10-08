@@ -1,5 +1,6 @@
 from pathlib import Path
 
+
 def collect_files(directory_path) -> list[dict]:
     files = []
 
@@ -57,15 +58,15 @@ def get_largest_files(
 def print_divider():
     print("-" * 30)
 
-def print_extensions(extensions: dict[str, int]):
-    for ext, count in extensions.items():
-        print(f"{ext}: {count}")
-
 def format_file_size(size: int, decimal_places: int=2) -> str:
     if size < 1024:
         return f"{size} Bytes"
 
     return f"{size / 1024:.{decimal_places}f} KB"
+
+def print_extensions(extensions: dict[str, int]):
+    for ext, count in extensions.items():
+        print(f"{ext}: {count}")
 
 def print_files_with_size(files):
     for file in files:

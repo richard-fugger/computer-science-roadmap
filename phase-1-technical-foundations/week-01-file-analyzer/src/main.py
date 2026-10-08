@@ -1,5 +1,6 @@
 from pathlib import Path
 
+
 def collect_files(directory_path) -> list[dict]:
     files = []
 
