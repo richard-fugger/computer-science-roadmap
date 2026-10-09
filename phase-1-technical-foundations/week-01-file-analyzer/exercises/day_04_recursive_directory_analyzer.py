@@ -5,10 +5,8 @@ def path_is_directory(path: Path) -> bool:
     if not path.exists():
         return False
 
-    if not path.is_dir():
-        return False
+    return path.is_dir()
 
-    return True
 
 def get_files_recursive(path: Path) -> list[dict]:
     files = []
@@ -75,7 +73,7 @@ def format_directories(directories: list[dict]) -> str:
     return formatted_dirs
 
 def create_divider() -> str:
-    return f"-"*30
+    return "-"*30
 
 def create_directory_summary_as_txt(
         summary_path: Path,
