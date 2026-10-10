@@ -162,7 +162,7 @@ def add_extensions_to_json(dir, output_path):
 def main():
     # Define constants
     DIR = Path("D:/nutrition-tracker/nutrition_tracker")
-    OUTPUT_PATH = Path("phase-1-technical-foundations/week-01-file-analyzer/output/05-day/analysis.json")
+    OUTPUT_PATH = Path("phase-1-technical-foundations/week-01-file-analyzer/output/05-day-analysis.json")
     OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
 
     # Analyse dir
