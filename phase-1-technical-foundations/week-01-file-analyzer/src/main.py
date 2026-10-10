@@ -1,23 +1,43 @@
+import argparse
 import json
 from pathlib import Path
 
+RED = "\033[31m"
+GREEN = "\033[32m"
+RESET = "\033[0m"
+
+def resolve_cli_output_path(output) -> Path | None:
+    if output is None:
+        return Path.cwd() / "analysis.json"
+
+    output_path = Path(output)
+    root = Path(output_path.anchor)
+
+    if output_path.anchor != "" and not root.exists():
+        return None
+
+    return output_path
 
 def collect_files(directory_path) -> list[dict]:
     """
-    Recursively collects all files in a dictionary and returns their
+    Recursively collects all files in a directory and returns their
     name, extension, size, and path as a list of dictionaries.
     """
     files = []
 
     for item in directory_path.rglob("*"):
-        if item.is_file():
-            file = {
-                "name": item.name,
-                "extension": item.suffix,
-                "size": item.stat().st_size,
-                "path": str(item.resolve())
-            }
-            files.append(file)
+        try:
+            if item.is_file():
+                file = {
+                    "name": item.name,
+                    "extension": item.suffix,
+                    "size": item.stat().st_size,
+                    "path": str(item.resolve())
+                }
+                files.append(file)
+
+        except (PermissionError, OSError) as e:
+            print(f"{RED}Could not read file: {item}\n{e}{RESET}")
 
     return files
 
@@ -29,7 +49,7 @@ def count_directories(directory):
 
     return dir_count
 
-def format_file_size(size: int, decimal_places: int=2) -> str:
+def format_file_size(size: int, decimal_places: int = 2) -> str:
     if size < 1024:
         return f"{round(size, decimal_places)} Bytes"
 
@@ -65,7 +85,7 @@ def group_extensions(files: list[dict]) -> dict[str, int]:
 
 def get_largest_files(
         files: list[dict],
-        limit: int = 5,
+        limit: int,
 ) -> list[dict]:
     sorted_files = sorted(
         files,
@@ -75,7 +95,7 @@ def get_largest_files(
 
     return sorted_files[:limit]
 
-def create_report(directory):
+def create_report(directory, limit=5):
     files = collect_files(directory)
 
     return {
@@ -83,7 +103,7 @@ def create_report(directory):
         "file_count": len(files),
         "directory_count": count_directories(directory),
         "total_size": calculate_total_size(files),
-        "largest_files": get_largest_files(files),
+        "largest_files": get_largest_files(files, limit),
         "extensions": group_extensions(files),
     }
 
@@ -96,7 +116,7 @@ def print_extensions(extensions: dict[str, int]):
             print(f"{ext}: {count}")
 
 def print_report(report):
-    print(f"Analyzed directory: {report['directory']}\n")
+    print(f"\nAnalyzed directory: {report['directory']}\n")
     print(f"Files: {report['file_count']}")
     print(f"Directories: {report['directory_count']}")
     print(f"Total size: {format_file_size(report['total_size'])}\n")
@@ -104,33 +124,70 @@ def print_report(report):
     print_files_with_size(report["largest_files"])
     print("\nExtensions:")
     print_extensions(report["extensions"])
-    print("\nPrinting report finished.")
+    print(f"{GREEN}\nSuccessfully printed report{RESET}")
 
 def export_report_as_json(report, output_path):
-    with open(output_path, "w", encoding="utf-8") as file:
-        json.dump(
-            report,
-            file,
-            indent=2,
-            ensure_ascii=False,
-        )
+    try:
+        with open(output_path, "w", encoding="utf-8") as file:
+            json.dump(
+                report,
+                file,
+                indent=2,
+                ensure_ascii=False,
+            )
 
-    print("Successfully exported JSON.")
+        print(f"{GREEN}Successfully exported JSON.{RESET}")
+
+    except FileNotFoundError as e:
+        print(f"{RED}File not found: {e}{RESET}")
+    except PermissionError as e:
+        print(f"{RED}Permission denied: {e}{RESET}")
+    except OSError as e:
+        print(f"{RED}OS error: {e}{RESET}")
+    
 
 
 def main():
-    # Define constants
-    DIRECTORY = Path("D:/nutrition-tracker/nutrition_tracker")
-    OUTPUT_PATH = Path("phase-1-technical-foundations/week-01-file-analyzer/output/05-day-main-project-report.json")
-    OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
+    # Initialize Parser
+    parser = argparse.ArgumentParser()
+    parser.add_argument("directory")
+    parser.add_argument("--json", action="store_true")
+    parser.add_argument("--output")
+    parser.add_argument("--top", type=int)
+    args = parser.parse_args()
 
-    if not DIRECTORY.is_dir():
-        print(f"Directory does not exist {DIRECTORY}")
+    # Check directory
+    directory = Path(args.directory)
+    if not directory.is_dir():
+        
+        print(f"{RED}Path is no valid directory: {args.directory}{RESET}")
+        return
 
-    report = create_report(DIRECTORY)
+    print(f"Start analyzing directory: {directory}")
+
+    # Check output path
+    output_path = resolve_cli_output_path(args.output)
+    if output_path is None:
+        print(f"{RED}The specified path is unreachable: {args.output}{RESET}")
+        return
+
+    # check top
+    if args.top is not None and args.top < 1:
+        print(f"{RED}--top must be > 0.\nInput: {args.top}{RESET}")
+        return
+
+    print("Creating report...")
+
+    # Create report
+    if args.top is None:
+        report = create_report(directory)
+    else:
+        report = create_report(directory, args.top)
 
     print_report(report)
-    export_report_as_json(report, OUTPUT_PATH)
+
+    if args.json:
+        export_report_as_json(report, output_path)
     
 
 if __name__ == "__main__":
