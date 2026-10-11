@@ -149,11 +149,11 @@ def export_report_as_json(report, output_path):
 
 def main():
     # Initialize Parser
-    parser = argparse.ArgumentParser()
-    parser.add_argument("directory")
-    parser.add_argument("--json", action="store_true")
-    parser.add_argument("--output")
-    parser.add_argument("--top", type=int)
+    parser = argparse.ArgumentParser(description="Analyze a directory and optionally export the result as JSON.")
+    parser.add_argument("directory", help="Directory that should be analyzed.")
+    parser.add_argument("--json", action="store_true", help="Output analyzes the result as JSON")
+    parser.add_argument("--output", help="Path where the JSON output should be saved.")
+    parser.add_argument("--top", type=int, help="Number of largest files to display.")
     args = parser.parse_args()
 
     # Check directory
