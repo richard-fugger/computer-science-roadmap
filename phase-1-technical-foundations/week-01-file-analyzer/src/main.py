@@ -158,8 +158,17 @@ def main():
 
     # Check directory
     directory = Path(args.directory)
-    if not directory.is_dir():
+
+    if not directory.exists():
+        print(f"{RED}Path does not exits: {args.directory}{RESET}")
+        return
+
+    if directory.is_path():
+        print(f"{RED}The specified path is a file instead of a directory: {args.directory}{RESET}")
+        return
         
+
+    if not directory.is_dir():
         print(f"{RED}Path is no valid directory: {args.directory}{RESET}")
         return
 
