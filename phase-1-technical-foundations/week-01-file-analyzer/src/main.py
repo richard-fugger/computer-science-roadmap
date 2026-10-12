@@ -163,7 +163,7 @@ def main():
         print(f"{RED}Path does not exits: {args.directory}{RESET}")
         return
 
-    if directory.is_path():
+    if directory.is_file():
         print(f"{RED}The specified path is a file instead of a directory: {args.directory}{RESET}")
         return
         
