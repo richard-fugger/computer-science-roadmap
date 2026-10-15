@@ -1,0 +1,254 @@
+{
+  "directory": "D:\\nutrition-tracker\\nutrition_tracker",
+  "file_count": 1729,
+  "directory_count": 1228,
+  "total_size": 1512769305,
+  "files": [
+    {
+      "name": "libflutter.so",
+      "size": 392527680
+    },
+    {
+      "name": "libVkLayer_khronos_validation.so",
+      "size": 248644248
+    },
+    {
+      "name": "app-debug.apk",
+      "size": 103914706
+    },
+    {
+      "name": "app-debug.apk",
+      "size": 103914706
+    },
+    {
+      "name": "app.dill",
+      "size": 62689960
+    }
+  ],
+  "extensions": [
+    {
+      "name": "no extension",
+      "count": 580
+    },
+    {
+      "name": ".yaml",
+      "count": 3
+    },
+    {
+      "name": ".iml",
+      "count": 2
+    },
+    {
+      "name": ".lock",
+      "count": 6
+    },
+    {
+      "name": ".md",
+      "count": 1
+    },
+    {
+      "name": ".json",
+      "count": 243
+    },
+    {
+      "name": ".dart",
+      "count": 58
+    },
+    {
+      "name": ".dill",
+      "count": 12
+    },
+    {
+      "name": ".deps",
+      "count": 2
+    },
+    {
+      "name": ".digest",
+      "count": 1
+    },
+    {
+      "name": ".part",
+      "count": 6
+    },
+    {
+      "name": ".sum",
+      "count": 1
+    },
+    {
+      "name": ".d",
+      "count": 13
+    },
+    {
+      "name": ".stamp",
+      "count": 9
+    },
+    {
+      "name": ".txt",
+      "count": 279
+    },
+    {
+      "name": ".dll",
+      "count": 3
+    },
+    {
+      "name": ".so",
+      "count": 38
+    },
+    {
+      "name": ".snapshot",
+      "count": 2
+    },
+    {
+      "name": ".incremental",
+      "count": 1
+    },
+    {
+      "name": ".sample",
+      "count": 14
+    },
+    {
+      "name": ".xml",
+      "count": 36
+    },
+    {
+      "name": ".kts",
+      "count": 3
+    },
+    {
+      "name": ".properties",
+      "count": 13
+    },
+    {
+      "name": ".bat",
+      "count": 12
+    },
+    {
+      "name": ".probe",
+      "count": 1
+    },
+    {
+      "name": ".bin",
+      "count": 44
+    },
+    {
+      "name": ".java",
+      "count": 1
+    },
+    {
+      "name": ".kt",
+      "count": 1
+    },
+    {
+      "name": ".png",
+      "count": 22
+    },
+    {
+      "name": ".jar",
+      "count": 31
+    },
+    {
+      "name": ".ninja",
+      "count": 6
+    },
+    {
+      "name": ".cmake",
+      "count": 12
+    },
+    {
+      "name": ".check_cache",
+      "count": 3
+    },
+    {
+      "name": ".log",
+      "count": 3
+    },
+    {
+      "name": ".c",
+      "count": 3
+    },
+    {
+      "name": ".o",
+      "count": 6
+    },
+    {
+      "name": ".cpp",
+      "count": 3
+    },
+    {
+      "name": ".Z",
+      "count": 3
+    },
+    {
+      "name": ".otf",
+      "count": 3
+    },
+    {
+      "name": ".ttf",
+      "count": 3
+    },
+    {
+      "name": ".frag",
+      "count": 6
+    },
+    {
+      "name": ".dex",
+      "count": 20
+    },
+    {
+      "name": ".class",
+      "count": 20
+    },
+    {
+      "name": ".kotlin_module",
+      "count": 2
+    },
+    {
+      "name": ".ap_",
+      "count": 1
+    },
+    {
+      "name": ".flat",
+      "count": 100
+    },
+    {
+      "name": ".tab",
+      "count": 14
+    },
+    {
+      "name": ".keystream",
+      "count": 13
+    },
+    {
+      "name": ".len",
+      "count": 39
+    },
+    {
+      "name": ".at",
+      "count": 13
+    },
+    {
+      "name": ".tab_i",
+      "count": 10
+    },
+    {
+      "name": ".apk",
+      "count": 2
+    },
+    {
+      "name": ".sha1",
+      "count": 1
+    },
+    {
+      "name": ".globals",
+      "count": 2
+    },
+    {
+      "name": ".aar",
+      "count": 2
+    },
+    {
+      "name": ".html",
+      "count": 1
+    }
+  ]
+}

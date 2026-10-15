@@ -1,0 +1,31 @@
+{
+  "directory": "D:\\other\\ait",
+  "file_count": 7,
+  "directory_count": 4,
+  "total_size": 842029,
+  "largest_files": [
+    {
+      "name": "Commercial_License_Hailuo.png",
+      "extension": ".png",
+      "size": 363076,
+      "path": "D:\\other\\ait\\Licences\\Hailuo\\Commercial_License_Hailuo.png"
+    },
+    {
+      "name": "AudioTags_Examples.png",
+      "extension": ".png",
+      "size": 169185,
+      "path": "D:\\other\\ait\\ElevenL\\AudioTags_Examples.png"
+    },
+    {
+      "name": "Speechma_Licence.png",
+      "extension": ".png",
+      "size": 159539,
+      "path": "D:\\other\\ait\\Licences\\Speechma\\Speechma_Licence.png"
+    }
+  ],
+  "extensions": {
+    ".txt": 2,
+    ".png": 4,
+    ".eml": 1
+  }
+}
