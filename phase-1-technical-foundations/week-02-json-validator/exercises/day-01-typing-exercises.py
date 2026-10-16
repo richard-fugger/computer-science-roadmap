@@ -1,3 +1,16 @@
+# Day 1 - Practical Exercises
+#
+#
+# 1. Write:
+#    to_paths(values: list[str]) -> list[Path]
+#
+# 2. Write a function that searches a list of dictionaries
+#    for an item by ID and returns either the dictionary or None.
+#
+# 3. Create a type alias such as:
+#    JsonObject = dict[str, object]
+#    and use it in at least one meaningful place.
+
 from pathlib import Path
 
 JsonObject = dict[str, object]
