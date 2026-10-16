@@ -1,4 +1,5 @@
 import argparse
+from pathlib import Path
 
 from src.loader import load_json
 
@@ -8,7 +9,7 @@ def main():
     parser.add_argument("filepath")
     args = parser.parse_args()
 
-    obj = load_json(args.filepath)
+    obj = load_json(Path(args.filepath))
     print(type(obj))
 
 
