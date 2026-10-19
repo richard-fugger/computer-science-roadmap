@@ -13,6 +13,6 @@ def load_json(path: Path) -> object:
     except PermissionError as error:
         raise JsonFileReadError(f"Permission denied: {path}") from error
     except json.JSONDecodeError as error:
-        raise InvalidJsonError(f"Invalid JSON inf {path}: Row: {error.lineno}, Column: {error.colno}") from error
+        raise InvalidJsonError(f"Invalid JSON in {path}: Row: {error.lineno}, Column: {error.colno}") from error
     except OSError as error:
         raise JsonFileReadError(f"File could not be read: {path}") from error

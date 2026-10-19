@@ -1,8 +1,8 @@
-class JsonValidatorException(Exception):
+class JsonValidatorError(Exception):
     pass
 
-class JsonFileReadError(JsonValidatorException):
+class JsonFileReadError(JsonValidatorError):
     pass
 
-class InvalidJsonError(JsonValidatorException):
+class InvalidJsonError(JsonValidatorError):
     pass
