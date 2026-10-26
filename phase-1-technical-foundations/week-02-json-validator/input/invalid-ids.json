@@ -1,0 +1,19 @@
+{
+  "items": [
+    {
+      "id": "",
+      "name": "Keyboard",
+      "value": 42
+    },
+    {
+      "id": "item-002",
+      "name": "   ",
+      "value": 50
+    },
+    {
+      "id": 123,
+      "name": "Monitor",
+      "value": 75
+    }
+  ]
+}

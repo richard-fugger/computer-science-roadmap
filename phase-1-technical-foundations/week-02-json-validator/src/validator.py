@@ -25,7 +25,7 @@ def validate_root(items: object) -> list[ValidationIssue]:
             ValidationIssue(
                 path = "root",
                 code = ValidationIssueCode.ROOT_IS_NOT_JSON_ITEM,
-                message = "The root of the JSON document has the wrong format."
+                message = "Root must be a json object"
             )
         ]
     return []
@@ -36,7 +36,7 @@ def validate_items(items: object) -> list[ValidationIssue]:
             ValidationIssue(
                 path = "items",
                 code = ValidationIssueCode.ITEMS_NOT_EXIST,
-                message = "The Field \"items\" does not exist."
+                message = "\"items\" does not exist."
             )
         ]
 
@@ -45,7 +45,7 @@ def validate_items(items: object) -> list[ValidationIssue]:
             ValidationIssue(
                 path = "items",
                 code = ValidationIssueCode.ITEMS_IS_NOT_LIST,
-                message = "The Field \"items\" has the wrong format."
+                message = "\"items\" must be a list"
             )
         ]
 
@@ -63,7 +63,7 @@ def validate_item(
             ValidationIssue(
                 path = f"items[{index}]",
                 code = ValidationIssueCode.ITEM_IS_NOT_JSON_OBJECT,
-                message = f"The item at index {index} is not a JSON object."
+                message = f"Item at index {index} is not a JSON object."
             )
         ], None
 
@@ -77,7 +77,7 @@ def validate_item(
             ValidationIssue(
                 path = f"items[{index}].id",
                 code = ValidationIssueCode.ID_DOES_NOT_EXIST,
-                message = f"The item's id at index {index} does not exist."
+                message = f"Item id at index {index} does not exist."
             )
         )
 
@@ -86,7 +86,7 @@ def validate_item(
             ValidationIssue(
                 path = f"items[{index}].name",
                 code = ValidationIssueCode.NAME_DOES_NOT_EXIST,
-                message = f"The item's name at index {index} does not exist."
+                message = f"Item name at index {index} does not exist."
             )
         )
 
@@ -95,7 +95,7 @@ def validate_item(
             ValidationIssue(
                 path = f"items[{index}].value",
                 code = ValidationIssueCode.VALUE_DOES_NOT_EXIST,
-                message = f"The item's value at index {index} does not exist."
+                message = f"Item value at index {index} does not exist."
             )
         )
 
@@ -107,7 +107,7 @@ def validate_item(
                 ValidationIssue(
                     path = f"items[{index}].id",
                     code = ValidationIssueCode.ID_IS_NOT_NON_EMPTY_STRING,
-                    message = f"The item's id at index {index} is not a non empty string."
+                    message = f"Item id at index {index} is not a non empty string."
                 )
             )
         else:
@@ -118,7 +118,7 @@ def validate_item(
                     ValidationIssue(
                         path = f"items[{index}].id",
                         code = ValidationIssueCode.ID_ALREADY_EXISTS,
-                        message = f"The item's id at index {index} already exists."
+                        message = f"Item id at index {index} already exists."
                     )
                 )
 
@@ -127,7 +127,7 @@ def validate_item(
             ValidationIssue(
                 path = f"items[{index}].name",
                 code = ValidationIssueCode.NAME_IS_NOT_NON_EMPTY_STRING,
-                message = f"The item's name at index {index} is not a non empty string."
+                message = f"Item name at index {index} is not a non empty string."
             )
         )
 
@@ -136,7 +136,7 @@ def validate_item(
             ValidationIssue(
                 path = f"items[{index}].value",
                 code = ValidationIssueCode.VALUE_OUT_OF_RANGE,
-                message = f"The item's value at index {index} is out of range (0 - 100)."
+                message = f"Item value at index {index} is out of range (0 - 100)."
             )
         )
 
@@ -145,7 +145,7 @@ def validate_item(
             ValidationIssue(
                 path = f"items[{index}].enabled",
                 code = ValidationIssueCode.ENABLED_IS_NOT_BOOL,
-                message = f"The item's enabled field at index {index} is not from type bool."
+                message = f"Enabled at index {index} is not from type bool."
             )
         )
 

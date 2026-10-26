@@ -1,4 +1,27 @@
 {
-  "name": "John",
-  "age": 62
+  "items": [
+    {
+      "id": "item-001",
+      "name": "Keyboard",
+      "value": 42,
+      "enabled": true
+    },
+    {
+      "id": "item-002",
+      "name": "Mouse",
+      "value": 75,
+      "enabled": false
+    },
+    {
+      "id": "item-003",
+      "name": "Monitor",
+      "value": 100
+    },
+    {
+      "id": "item-004",
+      "name": "Headset",
+      "value": 0,
+      "enabled": true
+    }
+  ]
 }
