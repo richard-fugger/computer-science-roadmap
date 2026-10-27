@@ -31,6 +31,17 @@ def test_valid_document_returns_no_issues():
     # Assert
     assert issues == []
 
+def test_root_of_type_list_returns_issue():
+    # Arrange
+    data = []
+
+    # Act
+    issues = validate_document(data)
+    codes = [issue.code for issue in issues]
+
+    # Assert
+    assert ValidationIssueCode.ROOT_IS_NOT_JSON_ITEM in codes
+
 def test_missing_items_returns_issue():
     # Arrange
     data = {
@@ -71,6 +82,36 @@ def test_missing_id_returns_issue():
     
     assert ValidationIssueCode.ID_DOES_NOT_EXIST in codes
 
+def test_missing_name_returns_issue():
+    data = {
+        "items": [
+            {
+                "id": "item-001",
+                "value": 50,
+            }
+        ]
+    }
+
+    issues = validate_document(data)
+    codes = [issue.code for issue in issues]
+    
+    assert ValidationIssueCode.NAME_DOES_NOT_EXIST in codes
+
+def test_missing_value_returns_issue():
+    data = {
+        "items": [
+            {
+                "id": "item-001",
+                "name": "Example",
+            }
+        ]
+    }
+
+    issues = validate_document(data)
+    codes = [issue.code for issue in issues]
+    
+    assert ValidationIssueCode.VALUE_DOES_NOT_EXIST in codes
+
 def test_empty_id_returns_issue():
     data = make_document(item_id="")
 
@@ -78,6 +119,14 @@ def test_empty_id_returns_issue():
     codes = [issue.code for issue in issues]
         
     assert ValidationIssueCode.ID_IS_NOT_NON_EMPTY_STRING in codes
+
+def test_empty_name_returns_issue():
+    data = make_document(name="")
+
+    issues = validate_document(data)
+    codes = [issue.code for issue in issues]
+        
+    assert ValidationIssueCode.NAME_IS_NOT_NON_EMPTY_STRING in codes
 
 def test_duplicate_id_returns_issue():
     data = {
