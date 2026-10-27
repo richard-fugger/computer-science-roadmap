@@ -35,7 +35,7 @@ This lets you inspect:
 
 ---
 
-## 3. Debugger Nevigation
+## 3. Debugger Navigation
 
 ### Step Over
 
@@ -47,15 +47,33 @@ current line
 → next line
 ```
 
+VS Code shortcut:
+
+```text
+F10
+```
+
 ### Step Into
 
 Enters a function that is called on the current line.
 
 Useful when you want to inspect what happens inside that function.
 
-### Step out
+VS Code shortcut:
+
+```text
+F11
+```
+
+### Step Out
 
 Finishes the current function and returns to the caller.
+
+VS Code shortcut:
+
+```text
+Shift + F11
+```
 
 ### Continue
 
@@ -64,6 +82,52 @@ Continues execution until:
 - the next breakpoint
 - an exception
 - program end
+
+VS Code shortcut:
+
+```text
+F5
+```
+
+### Stop Debugging
+
+Stops the current debugging session.
+
+VS Code shortcut:
+
+```text
+Shift + F5
+```
+
+### Debugger Controls in VS Code
+
+The most important debugger controls are:
+
+```text
+Continue        → F5
+Step Over       → F10
+Step Into       → F11
+Step Out        → Shift + F11
+Restart         → Ctrl + Shift + F5
+Stop            → Shift + F5
+```
+
+The yellow highlighted line shows the next line that will be executed.
+
+Current local variables can be inspected under:
+
+```text
+Run and Debug
+→ Variables
+→ Locals
+```
+
+The current chain of active function calls can be inspected under:
+
+```text
+Run and Debug
+→ Call Stack
+```
 
 ---
 
