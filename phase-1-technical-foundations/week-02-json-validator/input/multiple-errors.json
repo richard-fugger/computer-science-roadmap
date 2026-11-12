@@ -1,0 +1,22 @@
+{
+  "items": [
+    {
+      "id": "",
+      "name": "",
+      "value": 150,
+      "enabled": "yes"
+    },
+    {
+      "id": "item-002",
+      "name": "Mouse",
+      "value": true
+    },
+    {
+      "id": "item-002",
+      "name": "   ",
+      "value": -20,
+      "enabled": 1
+    },
+    42
+  ]
+}

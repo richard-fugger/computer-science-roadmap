@@ -1,0 +1,11 @@
+{
+  "items": [
+    {
+      "id": "item-001",
+      "name": "Keyboard",
+      "value": 42
+    },
+    "this should not be here",
+    123
+  ]
+}
