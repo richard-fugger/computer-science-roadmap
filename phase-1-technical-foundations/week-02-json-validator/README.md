@@ -52,7 +52,7 @@ python src/main.py <file_path>
             "id": "item-001",
             "name": "Example",
             "value": 50,
-            "enabled": true,
+            "enabled": true
         }
     ]
 }
