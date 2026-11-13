@@ -1,0 +1,15 @@
+
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug Logfile Parser",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "src.main",
+            "cwd": "${workspaceFolder}/phase-1-technical-foundations/week-03-logfile-parser",
+            "console": "integratedTerminal",
+            "justMyCode": true
+        }
+    ]
+}
